@@ -25,9 +25,6 @@ public class Game {
     private static Team firstTeam = new Team();
     private static Team secondTeam = new Team();
 
-    private Game() {
-    }
-
     public static Game create() {
         Game game = new Game();
 
@@ -91,6 +88,9 @@ public class Game {
 
     public static Team getSecondTeam() {
         return secondTeam;
+    }
+
+    private Game() {
     }
 
     private static List<Unit> createElvesТroop() {
