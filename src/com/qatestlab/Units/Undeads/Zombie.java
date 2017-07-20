@@ -19,7 +19,6 @@ public class Zombie extends Unit {
     public Zombie () {
         this.setAttackDamage(ATTACK_SKILL);
         this.setType(ZOMBIE);
-        this.setFavour(false);
         Action attack = (enemy) -> enemy.takeDamage(attackDamage);
         this.getActions().put(ATTACK, attack);
     }
