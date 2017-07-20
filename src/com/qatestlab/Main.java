@@ -24,6 +24,5 @@ public class Main {
             byte[] buffer = Game.logger.toString().getBytes();
             fileOutputStream.write(buffer, 0, buffer.length);
         } catch(IOException ex) {}
-
     }
 }

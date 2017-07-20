@@ -28,55 +28,6 @@ public class Game {
     private Game() {
     }
 
-    private static List<Unit> createElvesТroop() {
-        List<Unit> elves = new ArrayList<>();
-        elves.add(new ElfWizard());
-        for (int i=0; i<3; i++) {
-            elves.add(new ElfArcher());
-        }
-        for (int i=0; i<4; i++) {
-            elves.add(new ElfWarrior());
-        }
-        return elves;
-    }
-
-    private static List<Unit> createHumansТroop() {
-        List<Unit> humans = new ArrayList<>();
-        humans.add(new HumanWizard());
-        for (int i=0; i<3; i++) {
-            humans.add(new HumanArcher());
-        }
-        for (int i=0; i<4; i++) {
-            humans.add(new HumanWarrior());
-        }
-        return humans;
-    }
-
-    private static List<Unit> createOrcsТroop() {
-        List<Unit> orcs = new ArrayList<>();
-        orcs.add(new OrcShaman());
-        for (int i=0; i<3; i++) {
-            orcs.add(new OrcArcher());
-        }
-        for (int i=0; i<4; i++) {
-            orcs.add(new OrcHoblin());
-        }
-        return orcs;
-    }
-
-    private static List<Unit> createUndeadsТroop() {
-        List<Unit> undeads = new ArrayList<>();
-        undeads.add(new Necromancer());
-        for (int i=0; i<3; i++) {
-            undeads.add(new Hunter());
-        }
-        for (int i=0; i<4; i++) {
-            undeads.add(new Zombie());
-        }
-        return undeads;
-    }
-
-
     public static Game create() {
         Game game = new Game();
 
@@ -129,6 +80,11 @@ public class Game {
         return game;
     }
 
+    public boolean isOver() {
+        return  (firstTeam.getEnemies().size() == 0) || (secondTeam.getEnemies().size() == 0)
+                || (firstTeam.getAllies().size() == 0)  || (secondTeam.getAllies().size() == 0);
+    }
+
     public static Team getFirstTeam() {
         return firstTeam;
     }
@@ -137,8 +93,51 @@ public class Game {
         return secondTeam;
     }
 
-    public boolean isOver() {
-        return  (firstTeam.getEnemies().size() == 0) || (secondTeam.getEnemies().size() == 0)
-                || (firstTeam.getAllies().size() == 0)  || (secondTeam.getAllies().size() == 0);
+    private static List<Unit> createElvesТroop() {
+        List<Unit> elves = new ArrayList<>();
+        elves.add(new ElfWizard());
+        for (int i=0; i<3; i++) {
+            elves.add(new ElfArcher());
+        }
+        for (int i=0; i<4; i++) {
+            elves.add(new ElfWarrior());
+        }
+        return elves;
+    }
+
+    private static List<Unit> createHumansТroop() {
+        List<Unit> humans = new ArrayList<>();
+        humans.add(new HumanWizard());
+        for (int i=0; i<3; i++) {
+            humans.add(new HumanArcher());
+        }
+        for (int i=0; i<4; i++) {
+            humans.add(new HumanWarrior());
+        }
+        return humans;
+    }
+
+    private static List<Unit> createOrcsТroop() {
+        List<Unit> orcs = new ArrayList<>();
+        orcs.add(new OrcShaman());
+        for (int i=0; i<3; i++) {
+            orcs.add(new OrcArcher());
+        }
+        for (int i=0; i<4; i++) {
+            orcs.add(new OrcHoblin());
+        }
+        return orcs;
+    }
+
+    private static List<Unit> createUndeadsТroop() {
+        List<Unit> undeads = new ArrayList<>();
+        undeads.add(new Necromancer());
+        for (int i=0; i<3; i++) {
+            undeads.add(new Hunter());
+        }
+        for (int i=0; i<4; i++) {
+            undeads.add(new Zombie());
+        }
+        return undeads;
     }
 }
