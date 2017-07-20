@@ -22,11 +22,11 @@ public class Game {
 
     public static StringBuilder logger = new StringBuilder();
 
+    private static Game game = new Game();
     private static Team firstTeam = new Team();
     private static Team secondTeam = new Team();
 
     public static Game create() {
-        Game game = new Game();
 
         List<Unit> elves;
         List<Unit> orcs;
